@@ -1,5 +1,5 @@
 use super::types::{Bounds, Node};
-use rand::seq::SliceRandom;
+use rand::prelude::IndexedRandom;
 use rand::Rng;
 use std::collections::{BTreeMap, BTreeSet};
 
