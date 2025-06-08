@@ -7,7 +7,7 @@ fn f64_to_u8(f: f64) -> u8 {
 }
 
 pub fn clear_terminal() {
-    print!("\x1b[2J\x1b[?25l");
+    print!("\x1b[2J\x1b[?25l\x1b[=19h");
 }
 
 pub fn reset_terminal() {
@@ -42,7 +42,7 @@ pub fn paint_terminal(data: &BTreeMap<GridNode, ColorData>, max_x: i16, max_y: i
         *last_y = node.1 + 1;
 
         let node_disp = format!(
-            "\x1b[38;2;{};{};{}m{}", 
+            "\x1b[38;2;{};{};{}m{}\x1B[0m",
             &f64_to_u8(color.0), 
             &f64_to_u8(color.1), 
             &f64_to_u8(color.0), 
