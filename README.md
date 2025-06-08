@@ -11,8 +11,7 @@
 
 * Install the rust toolchain in order to have cargo installed by following
   [this](https://www.rust-lang.org/tools/install) guide.
-* build `cargo install --path .`
-* run `life`
+* run `cargo run .`
 
 ## License
 
