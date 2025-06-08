@@ -14,8 +14,7 @@ pub fn reset_terminal() {
     print!("\x1b[?25h");
 }
 
-
-static NODE_TEXT: &'static str = "x▓x";
+static NODE_TEXT: &str = "x▓x";
 static NODE_TEXT_LEN: i16 = 3;
 
 pub fn paint_terminal(data: &BTreeMap<GridNode, ColorData>, max_x: i16, max_y: i16) {
