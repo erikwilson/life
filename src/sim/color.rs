@@ -1,5 +1,5 @@
 use super::types::{Bounds, Node};
-use rand::prelude::IndexedRandom;
+use rand::prelude::SliceRandom;
 use rand::Rng;
 use std::collections::{BTreeMap, BTreeSet};
 
@@ -16,13 +16,13 @@ pub struct Palette(pub Vec<ColorData>);
 
 impl Palette {
     pub fn randomize<T: Clone + Ord, R: Rng + ?Sized>(
-        &self,
+        &mut self,
         v: &BTreeSet<T>,
         mut rng: &mut R,
     ) -> BTreeMap<T, ColorData> {
         v.iter()
             .cloned()
-            .map(|t| (t, self.0.choose(&mut rng).cloned().unwrap_or_default()))
+            .map(|t| (t, self.0.choose_mut(&mut rng).cloned().unwrap_or_default()))
             .collect()
     }
 

@@ -1,6 +1,5 @@
 use super::GridNode;
 use crate::sim::color::ColorData;
-use ansi_term::Color;
 use std::collections::BTreeMap;
 
 fn f64_to_u8(f: f64) -> u8 {
@@ -42,8 +41,13 @@ pub fn paint_terminal(data: &BTreeMap<GridNode, ColorData>, max_x: i16, max_y: i
         let y_delta = (node.1 - *last_y) * 3;
         *last_y = node.1 + 1;
 
-        let node_disp =
-            Color::RGB(f64_to_u8(color.0), f64_to_u8(color.1), f64_to_u8(color.2)).paint("x▓x");
+        let node_disp = format!(
+            "\x1b[38;2;{};{};{}m{}", 
+            &f64_to_u8(color.0), 
+            &f64_to_u8(color.1), 
+            &f64_to_u8(color.0), 
+            "x▓x"
+        );
 
         result += format!("{: >1$}{node_disp}", "", y_delta as usize).as_str();
     }
