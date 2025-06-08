@@ -43,9 +43,9 @@ pub fn paint_terminal(data: &BTreeMap<GridNode, ColorData>, max_x: i16, max_y: i
 
         let node_disp = format!(
             "\x1b[38;2;{};{};{}m{}\x1B[0m",
-            &f64_to_u8(color.0), 
-            &f64_to_u8(color.1), 
-            &f64_to_u8(color.0), 
+            &f64_to_u8(color.0),
+            &f64_to_u8(color.1),
+            &f64_to_u8(color.2),
             "x▓x"
         );
 
