@@ -1,7 +1,7 @@
 # life
 
-[![Crates.io](https://img.shields.io/crates/v/life.svg)](https://crates.io/crates/life)
-[![Docs.rs](https://docs.rs/life/badge.svg)](https://docs.rs/life)
+<!-- [![Crates.io](https://img.shields.io/crates/v/life.svg)](https://crates.io/crates/life) -->
+<!-- [![Docs.rs](https://docs.rs/life/badge.svg)](https://docs.rs/life) -->
 [![CI](https://github.com/erikwilson/life/workflows/CI/badge.svg)](https://github.com/erikwilson/life/actions)
 <!-- [![Coverage Status](https://coveralls.io/repos/github/erikwilson/life/badge.svg?branch=main)](https://coveralls.io/github/erikwilson/life?branch=main) -->
 
