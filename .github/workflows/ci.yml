@@ -118,11 +118,10 @@ jobs:
           profile: minimal
           override: true
       - uses: Swatinem/rust-cache@v2.7.8
+      - name: Install cargo-tarpaulin
+        run: cargo install --features vendored-openssl cargo-tarpaulin
       - name: Run cargo-tarpaulin
-        uses: actions-rs/tarpaulin@v0.1
-        with:
-          version: '0.22.0'
-          args: '--all-features --workspace --ignore-tests --out Lcov'
+        run: cargo tarpaulin --all-features --workspace --ignore-tests --out Lcov
       - name: Upload to Coveralls
         # upload only if push
         if: ${{ github.event_name == 'push' }}
