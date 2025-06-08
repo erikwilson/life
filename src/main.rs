@@ -39,8 +39,8 @@ pub fn hello() {
     let mut rng = rand::rngs::StdRng::seed_from_u64(0);
     for _ in 1..(bounds.0.max_x as u32 * bounds.0.max_y as u32) {
         let node = GridNode(
-            rng.gen_range(bounds.0.min_x..bounds.0.max_x),
-            rng.gen_range(bounds.0.min_y..bounds.0.max_y),
+            rng.random_range(bounds.0.min_x..bounds.0.max_x),
+            rng.random_range(bounds.0.min_y..bounds.0.max_y),
         );
         state.insert(node);
     }
